@@ -1,0 +1,7 @@
+
+
+
+--- COMANDOS PARA INSTALACIÓN DE PAQUETES NODE ---
+1.- npm init -y
+
+2.- npm install --save-dev webpack webpack-cli html-webpack-plugin
