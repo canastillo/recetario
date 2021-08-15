@@ -4,13 +4,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/js/index.js',
     output: {
-        path: path.resolve(__dirname, 'recetario_dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'recipes.html',
+            template: './src/recipes.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'country.html',
+            template: './src/country.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'ingredients.html',
+            template: './src/ingredients.html'
         })
     ],
     module: {
@@ -31,7 +43,7 @@ module.exports = {
     ]
   },
     devServer: {
-    contentBase: path.resolve(__dirname, 'recetario_dist')
+    contentBase: path.resolve(__dirname, 'dist')
   }
 }
 
