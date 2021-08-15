@@ -1,0 +1,128 @@
+.main-header {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    top: 0;
+    transition: linear 1s;
+}
+  
+nav{
+    padding: 10px;
+    background-color: rgba(250, 250, 250, .9);
+    transition: background-color .5s linear;
+}
+  
+.nav-bar {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    clear: both;
+    max-height: 0;
+    transition: all .3s linear; /* background-color and max-height */
+}
+  
+.nav-bar__item {
+    text-align: center;
+    padding: 10px;
+}
+  
+.nav-bar__item a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Burger menu icon */
+
+.menu-icon {
+    float: right;
+    padding: 10px 5px;
+    position: relative;
+    margin-right: 20px;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  .nav-icon {
+    background: #1f222c;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: background .3s linear;
+    width: 18px;
+  }
+  
+  .nav-icon:before,
+  .nav-icon:after {
+    background: #1f222c;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s linear;
+    width: 100%;
+  }
+  
+  .nav-icon:before {
+    top: 5px;
+  }
+  
+  .nav-icon:after {
+    top: -5px;
+  }
+  
+  /* Menu button (menu animations) */
+  
+  .main-header .menu-btn {
+    display: none;
+  }
+  
+  .menu-btn:checked ~ .nav-bar {
+    max-height: 240px;
+  }
+  
+  .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+  }
+  
+  .menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    background-color: white;
+  }
+  
+  .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    background-color: white;
+  }
+  
+  .menu-btn:checked ~ .menu-icon .nav-icon:before,
+  .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    top: 0;
+  }
+  
+  /* Navbar for medium screen sizes */
+  
+  @media (min-width: 768px) {
+    nav {
+      background-color: rgba(250, 250, 250, .9);
+    }
+  
+    .nav-bar__item a {
+      font-size: 16px;
+      color: #1f222c;
+    }
+  
+    .nav-bar {
+      margin-right: 10px;
+      justify-content: end;
+      max-height: none;
+      flex-direction: row;
+    }
+  
+    .menu-icon {
+      display: none;
+    }
+  }
