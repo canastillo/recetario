@@ -23,7 +23,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'ingredients.html',
             template: './src/ingredients.html'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'recipe.html',
+            template: './src/recipe.html'
+        }),
     ],
     module: {
         rules: [
