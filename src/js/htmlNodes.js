@@ -52,13 +52,3 @@ export function addRecipes(recipes) {
 export function appendChildren(parent, ...children) {
     children.forEach(child => parent.appendChild(child))
 }
-
-// module.exports = {
-//     createContainer, 
-//     createCardThumbnail,
-//     createCardData,
-//     createRef,
-//     createCardLink,
-//     addRecipes,
-//     appendChildren
-// }

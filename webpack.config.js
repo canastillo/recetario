@@ -12,6 +12,22 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js'
     },
+    module: {
+        rules: [
+            { test: /\.css$/,
+            exclude: /node_modules/,
+             use: ['style-loader', 'css-loader'] },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                loader: "babel-loader",
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }
+        },
+    ],
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
@@ -43,22 +59,6 @@ module.exports = {
             template: './src/ingredient.html',
             chunks: ['main', 'ingredient', 'shared']
         }),
-    ],
-    module: {
-        rules: [
-            { test: /\.css$/,
-            exclude: /node_modules/,
-             use: ['style-loader', 'css-loader'] },
-            {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                loader: "babel-loader",
-                options: {
-                    presets: ['@babel/preset-env']
-                }
-            }
-        },
     ]
   },
     devServer: {
