@@ -38,18 +38,19 @@ function addIngredients(meal){
   textIngredients.textContent = "Ingredientes";
 
   // arreglo vacio para guardar los ingredientes
+  // y las imagenes de los ingredientes
   const ingredients = []
+  const imagesIngredients = []
 
-  // creamos una lista
-  const ul = document.createElement("ul");
-  
   // en total son 20 ingredientes
   for (let i = 1; i <= 20; i++) {
 
     if (meal[`strIngredient${i}`]) {
-       ingredients.push(
-        `${meal[`strIngredient${i}`]}`
-       );
+      let ingredient = meal[`strIngredient${i}`]
+       ingredients.push(ingredient);
+       imagesIngredients.push(
+        `${`https://www.themealdb.com/images/ingredients/${ingredient}.png`}`
+        );
     } else {
        break;
      }
@@ -58,15 +59,20 @@ function addIngredients(meal){
 
   // crear un list Item por cada ingrediente que exista
   // y agregarle el texto de el ingrediente
-  ingredients.forEach(ingredient => {
-    const li = document.createElement("li");
-    li.textContent = ingredient;
-    ul.appendChild(li)
-  });
+  imagesIngredients.forEach( image => {
+    
+    const ingredientContainer = document.createElement('div');
+    const ingredientText = document.createElement('span');
+    const ingredientImg = document.createElement("img");
 
-  // agregar la lista desordenada al 
-  // contenedor de ingredientes
-  containerIngredients.appendChild(ul);
+    ingredientImg.src = image;
+    ingredientText.textContent = "Iingrediente"
+
+    ingredientContainer.appendChild(ingredientImg);
+    ingredientContainer.appendChild(ingredientText);
+
+    containerIngredients.appendChild(ingredientContainer);
+  });
 
 }
 
