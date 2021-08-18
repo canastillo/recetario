@@ -28,6 +28,10 @@ module.exports = {
             filename: 'recipe.html',
             template: './src/recipe.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'ingredient.html',
+            template: './src/ingredient.html'
+        }),
     ],
     module: {
         rules: [
