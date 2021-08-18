@@ -2,35 +2,46 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: {
+        main: './src/js/index.js',
+        ingredient: { import: './src/js/ingredient.js', dependOn: 'shared'},
+        recipes: { import: './src/js/recipes.js', dependOn: 'shared'},
+        shared: './src/js/htmlNodes.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html'
+            template: './src/index.html',
+            chunks: ['main'],
         }),
         new HtmlWebpackPlugin({
             filename: 'recipes.html',
-            template: './src/recipes.html'
+            template: './src/recipes.html',
+            chunks: ['main', 'recipes', 'shared']
         }),
         new HtmlWebpackPlugin({
             filename: 'country.html',
-            template: './src/country.html'
+            template: './src/country.html',
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             filename: 'ingredients.html',
-            template: './src/ingredients.html'
+            template: './src/ingredients.html',
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             filename: 'recipe.html',
-            template: './src/recipe.html'
+            template: './src/recipe.html',
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             filename: 'ingredient.html',
-            template: './src/ingredient.html'
+            template: './src/ingredient.html',
+            chunks: ['main', 'ingredient', 'shared']
         }),
     ],
     module: {
