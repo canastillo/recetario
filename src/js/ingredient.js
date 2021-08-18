@@ -5,13 +5,16 @@ import {
     createRef,
     createCardLink,
     addRecipes,
-    appendChildren
+    appendChildren,
 } from './htmlNodes'
+
+import { showLoadingBar, hideLoadingBar } from './loadingBar'
 
 const recipesContainer = document.querySelector("#recipes-container")
 const url = window.location.href
 const ingredientName = url.split('i=')[1]
 
+showLoadingBar("#recipes-container")
 
 fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientName}`)
     .then(function (response) {
@@ -19,9 +22,10 @@ fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientName}`)
     })
     .then(function (data) {
         if (data["meals"] === null) {
+            hideLoadingBar()
             showNoIngredientMessage()
         } else {
-            showIngredient(data["meals"][0])
+            showIngredient()
             createRecipesNodes(data["meals"])
         }
     })
@@ -39,13 +43,13 @@ function showNoIngredientMessage() {
 
 // Crear y mostrar recetas
 
-function showIngredient(meal) {
+function showIngredient() {
     const heading = document.querySelector("h1")
     heading.textContent = capitalize(ingredientName)
 }
 
 function capitalize(name) {
-    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+    return (name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).split('_').join(" ")
 }
 
 function createRecipesNodes(meals) {
@@ -75,5 +79,6 @@ function createRecipesNodes(meals) {
         recipes.push(recipe) // Agregamos la receta al conjunto de recetas
     })
 
+    hideLoadingBar()
     addRecipes(recipes, recipesContainer)
 }

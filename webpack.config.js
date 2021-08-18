@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         main: './src/js/index.js',
-        ingredient: { import: './src/js/ingredient.js', dependOn: 'shared' },
-        recipes: { import: './src/js/recipes.js', dependOn: 'shared' },
-        shared: './src/js/htmlNodes.js'
+        ingredient: { import: './src/js/ingredient.js', dependOn: 'loadingbar' },
+        recipes: { import: './src/js/recipes.js', dependOn: 'loadingbar' },
+        loadingbar: './src/js/loadingBar.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -40,7 +40,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'recipes.html',
             template: './src/recipes.html',
-            chunks: ['main', 'recipes', 'shared']
+            chunks: ['main', 'recipes', 'loadingbar']
         }),
         new HtmlWebpackPlugin({
             filename: 'country.html',
@@ -60,7 +60,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'ingredient.html',
             template: './src/ingredient.html',
-            chunks: ['main', 'ingredient', 'shared']
+            chunks: ['main', 'ingredient', 'loadingbar']
         }),
     ],
     devServer: {

@@ -5,17 +5,18 @@ import {
     createRef,
     createCardLink,
     addRecipes,
-    appendChildren
+    appendChildren,
 } from './htmlNodes'
 
+import { showLoadingBar, hideLoadingBar } from './loadingBar'
+
 let letters = document.querySelectorAll(".page-link")
-let recipesContainer = document.querySelector("#recipes-container")
 
 letters.forEach(letter => {
     letter.addEventListener('click', (e) => {
 
         // Actualizamos la UI para comunicar al usuario que se recibió su indicación
-        showLoadingBar()
+        showLoadingBar("#recipes-container")
         hideNoRecipesMessage()
         setActive(e.target)
 
@@ -38,36 +39,6 @@ letters.forEach(letter => {
         })
     })
 })
-
-// Barra de carga (cuando se hacen peticiones)
-
-function showLoadingBar() {
-    let loader = document.querySelector("#loader")
-    let rows = document.querySelectorAll(".row")
-
-    // Quitamos las recetas que estaban
-    rows.forEach(row => recipesContainer.removeChild(row))
-
-    if (loader) {
-        loader.style.animationIterationCount = "infinite"
-        loader.style.display = "block"
-    } else 
-        createLoadingBar()
-}
-
-function createLoadingBar() {
-    let loader = document.createElement("div")
-
-    loader.classList.add("loader")
-    loader.id = "loader"
-    recipesContainer.appendChild(loader)
-}
-
-function hideLoadingBar() {
-    let loader = document.querySelector("#loader")
-    loader.style.display = "none"
-    loader.style.animationIterationCount = "0"
-}
 
 // Mensaje de que no se encontraron recetas
 
