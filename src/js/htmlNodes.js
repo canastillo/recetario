@@ -34,6 +34,7 @@ export function createCardLink(href, ...types) {
 
 export function addRecipes(recipes) {
     let recipesContainer = document.querySelector("#recipes-container")
+    
     // Armamos filas de cuatro recetas
     for(let start = 0; start <= recipes.length - 1; start += 4) {
         let row = createContainer("div", "row")

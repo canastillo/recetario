@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         main: './src/js/index.js',
-        ingredient: { import: './src/js/ingredient.js', dependOn: 'shared'},
-        recipes: { import: './src/js/recipes.js', dependOn: 'shared'},
+        ingredient: { import: './src/js/ingredient.js', dependOn: 'shared' },
+        recipes: { import: './src/js/recipes.js', dependOn: 'shared' },
         shared: './src/js/htmlNodes.js'
     },
     output: {
@@ -14,20 +14,23 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.css$/,
-            exclude: /node_modules/,
-             use: ['style-loader', 'css-loader'] },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader']
+            },
             {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
-                loader: "babel-loader",
-                options: {
-                    presets: ['@babel/preset-env']
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
-            }
-        },
-    ],
+            },
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
@@ -59,10 +62,9 @@ module.exports = {
             template: './src/ingredient.html',
             chunks: ['main', 'ingredient', 'shared']
         }),
-    ]
-  },
+    ],
     devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
-  }
+        contentBase: path.resolve(__dirname, 'dist')
+    }
 }
 

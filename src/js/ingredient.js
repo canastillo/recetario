@@ -21,7 +21,7 @@ fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientName}`)
         if (data["meals"] === null) {
             showNoIngredientMessage()
         } else {
-            setIngredientTitle()
+            showIngredient(data["meals"][0])
             createRecipesNodes(data["meals"])
         }
     })
@@ -39,7 +39,7 @@ function showNoIngredientMessage() {
 
 // Crear y mostrar recetas
 
-function setIngredientTitle() {
+function showIngredient(meal) {
     const heading = document.querySelector("h1")
     heading.textContent = capitalize(ingredientName)
 }
@@ -54,7 +54,7 @@ function createRecipesNodes(meals) {
     meals.forEach(meal => {
         // Creamos un card por cada platillo
         let recipe = createContainer("col-sm-12", "col-md-6", "col-lg-3")
-        let card = createContainer("card", "mx-auto")
+        let card = createContainer("card", "card-short", "mx-auto")
         let body = createContainer("card-body")
 
         // Creamos los nodos de los datos
