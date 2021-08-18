@@ -83,6 +83,54 @@
     text-align: center;
 }
 
-#github {
-    background-color: #888888 !important;
+
+
+/* Seccción Main*/
+
+.banner{
+    display: flex;
+    padding: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 50px;
+}
+
+.ArticuleImagenMain{
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+
+}
+
+.carrucelgeneral{
+    position: relative;
+}
+
+.imagenescarrucel{
+    position: relative;
+
+}
+
+
+.CarrucelFace img{
+    max-width: 100%;
+    z-index: 1;
+}
+
+.buscar button{
+    color: #030302;
+    background-color: #d77c1d;
+    padding: 14px 14px 12px 12px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.buscar input{
+    border-radius: 5px;
+    boder: 0;
+    width: 200px;
+    height: 50px;
+
+
 }
