@@ -17,6 +17,10 @@ module.exports = {
             template: './src/recipes.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'recipe.html',
+            template: './src/recipe.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'country.html',
             template: './src/country.html'
         }),
