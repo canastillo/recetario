@@ -128,9 +128,11 @@
 
 .buscar input{
     border-radius: 5px;
-    boder: 0;
     width: 200px;
     height: 50px;
-
-
 }
+
+footer{
+    bottom: 0;
+}
+
