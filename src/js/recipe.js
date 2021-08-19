@@ -1,4 +1,5 @@
-const id = 52775;
+const recipeURL = window.location.href
+const id = recipeURL.split('i=')[1]
 const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
 
 const containerMain = document.getElementById("containerMain");
