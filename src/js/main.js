@@ -1,5 +1,4 @@
 let recetasContenedor = document.querySelector("#recetas-container");
-
 let ingredientesContenedor = document.querySelector("#ingredientes-container");
 
 ///Recuperación de lista de recetas
@@ -8,7 +7,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
     .then(response => response.json())
     .then(data => {
         data['meals'].forEach(receta => {
-            console.log(receta)
             let card = createCardCategoria(receta)
             recetasContenedor.appendChild(card)
         })
