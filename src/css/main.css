@@ -1,0 +1,26 @@
+#containerMain {
+    border-style: solid;
+    border-color: green;
+    width: 100%;
+}
+
+#containerMeal {
+    border-style: solid;
+    border-color: teal;
+    width: 50%;
+}
+
+#containerIngredients {
+    border-style: solid;
+    border-color:red;
+    width: 50%;
+}
+
+#imgMeal {
+    height: 50%;
+}
+
+#textMeal {
+    margin-top: 50%;
+    color: blue;
+} 
