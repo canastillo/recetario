@@ -1,4 +1,4 @@
-const id = 52771;
+const id = 52775;
 const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
 
 const containerMain = document.getElementById("containerMain");
@@ -30,7 +30,6 @@ function addMeal(meal){
 
   textMeal.textContent = `${meal.strMeal}`;
   imgMeal.src = `${meal.strMealThumb}`;
-
 }
 
 function addIngredients(meal){
@@ -59,14 +58,17 @@ function addIngredients(meal){
 
   // crear un list Item por cada ingrediente que exista
   // y agregarle el texto de el ingrediente
-  imagesIngredients.forEach( image => {
-    
+  imagesIngredients.forEach( (image, position) => {
+
     const ingredientContainer = document.createElement('div');
+
     const ingredientText = document.createElement('span');
     const ingredientImg = document.createElement("img");
 
     ingredientImg.src = image;
-    ingredientText.textContent = "Iingrediente"
+    ingredientImg.height = 80
+
+    ingredientText.textContent = ingredients[position]
 
     ingredientContainer.appendChild(ingredientImg);
     ingredientContainer.appendChild(ingredientText);
