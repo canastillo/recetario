@@ -125,3 +125,14 @@ randomButton.addEventListener('click', () => {
 
         })
 })
+
+const btnRecipes = document.querySelector("#btn-recipes")
+const btnIngredients = document.querySelector("#btn-ingredients")
+
+btnRecipes.addEventListener('click', () => {
+    location.href = "./recipes.html"
+})
+
+btnIngredients.addEventListener('click', () => {
+    location.href = "./ingredients.html"
+})
