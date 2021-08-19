@@ -6,6 +6,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
     })
     .then(function (data) {
         //console.log(data);
+        console.log("Hey");
         let meals = data.meals
         let url = "https://www.themealdb.com/images/ingredients/"
         //console.log(meals)

@@ -6,8 +6,9 @@ module.exports = {
         main: './src/js/index.js',
         ingredient: { import: './src/js/ingredient.js', dependOn: 'loadingbar' },
         recipes: { import: './src/js/recipes.js', dependOn: 'loadingbar' },
-        loadingbar: './src/js/loadingBar.js'
-
+        loadingbar: './src/js/loadingBar.js',
+        ingredients: './src/js/ingredients.js',
+        home: './src/js/main.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -36,7 +37,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            chunks: ['main'],
+            chunks: ['main', 'home'],
         }),
         new HtmlWebpackPlugin({
             filename: 'recipes.html',
@@ -44,14 +45,9 @@ module.exports = {
             chunks: ['main', 'recipes', 'loadingbar']
         }),
         new HtmlWebpackPlugin({
-            filename: 'country.html',
-            template: './src/country.html',
-            chunks: ['main']
-        }),
-        new HtmlWebpackPlugin({
             filename: 'ingredients.html',
             template: './src/ingredients.html',
-            chunks: ['main']
+            chunks: ['main', 'ingredients']
         }),
         new HtmlWebpackPlugin({
             filename: 'recipe.html',
@@ -68,4 +64,3 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'dist')
     }
 }
-
