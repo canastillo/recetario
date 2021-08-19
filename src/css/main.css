@@ -103,17 +103,17 @@
 
 }
 
-.carrucelgeneral{
+.imagenGeneral{
     position: relative;
 }
 
-.imagenescarrucel{
+.imagenesPrincipal{
     position: relative;
 
 }
 
 
-.CarrucelFace img{
+.PortadaPlatillo img{
     max-width: 100%;
     z-index: 1;
 }
@@ -134,5 +134,23 @@
 
 footer{
     bottom: 0;
+}
+
+#recetas-container{
+    display: flex;
+}
+
+#ingredientes-container{
+    display: flex;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    margin: auto;
+    text-align: center;
+}
+.card img {
+    max-width: 200px;
 }
 
