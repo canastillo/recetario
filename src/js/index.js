@@ -1,2 +1,6 @@
 import css from '../css/main.css';
-import './recipes'
+
+import './ingredients'
+import './country'
+import '../js/main';
+import './recipe'
