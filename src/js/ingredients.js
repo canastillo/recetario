@@ -6,6 +6,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
     })
     .then(function (data) {
         //console.log(data);
+        console.log("Hey");
         let meals = data.meals
         let url = "https://www.themealdb.com/images/ingredients/"
         //console.log(meals)
@@ -26,7 +27,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
             let currentHTML = 
                             `
                             <div class="mb-4 col">
-                                <div class="card border-0 rounded-3 bg-light text-center h-100">
+                                <div class="card card-ingredient border-0 rounded-3 bg-light text-center h-100">
                                     <a href="./ingredient.html?i=${name}" class="text-decoration-none text-reset">
                                         <img src="${complete_url}" class="card-img-top"
                                             alt="${name}">
