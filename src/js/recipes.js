@@ -75,7 +75,7 @@ function createRecipesNodes(meals) {
     meals.forEach(meal => {
         // Creamos un card por cada platillo
         let recipe = createContainer("col-sm-12","col-md-6", "col-lg-3")
-        let card = createContainer("card", "card-long", "mx-auto")
+        let card = createContainer("card", "card-recipe", "card-long", "mx-auto")
         let body = createContainer("card-body")
 
         // Creamos los nodos de los datos

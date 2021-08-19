@@ -72,7 +72,7 @@ h1 {
     color: #888;
 }
 
-.card {
+.card-recipe {
     max-width: 400px;
     margin-bottom: 20px;
 }
@@ -223,13 +223,13 @@ footer{
     display: flex;
 }
 
-.card {
+.card-ingredient {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 200px;
     margin: auto;
     text-align: center;
 }
-.card img {
+.card-ingredient img {
     max-width: 200px;
 }
 
