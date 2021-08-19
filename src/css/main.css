@@ -10,25 +10,12 @@ h1 {
     text-align: center;
 }
 
-#containerMeal {
-    border-style: solid;
-    border-color: teal;
-    width: 50%;
-}
-
-#containerIngredients {
-    border-style: solid;
-    border-color:red;
-    width: 50%;
-}
-
 #imgMeal {
     height: 50%;
 }
 
 #textMeal {
     margin-top: 50%;
-    color: blue;
 } 
 .main-container {
     margin-top: 60px;

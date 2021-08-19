@@ -47,9 +47,7 @@ function addIngredients(meal){
     if (meal[`strIngredient${i}`]) {
       let ingredient = meal[`strIngredient${i}`]
        ingredients.push(ingredient);
-       imagesIngredients.push(
-        `${`https://www.themealdb.com/images/ingredients/${ingredient}.png`}`
-        );
+       imagesIngredients.push(`https://www.themealdb.com/images/ingredients/${ingredient}.png`);
     } else {
        break;
      }
@@ -61,10 +59,15 @@ function addIngredients(meal){
   imagesIngredients.forEach( (image, position) => {
 
     const ingredientContainer = document.createElement('div');
+    ingredientContainer.classList.add("w-50")
+    ingredientContainer.classList.add("mx-auto")
 
-    const ingredientText = document.createElement('span');
+    const ingredientText = document.createElement('p');
+    ingredientText.style.textAlign = "center"
+    
     const ingredientImg = document.createElement("img");
-
+    ingredientImg.classList.add("mx-auto")
+    ingredientImg.style.display = "block"
     ingredientImg.src = image;
     ingredientImg.height = 80
 
@@ -79,7 +82,13 @@ function addIngredients(meal){
 }
 
 function addInstructions(meal){
-  instructions.textContent = `${meal.strInstructions}`;
+  meal.strInstructions.split(".").map(paragraph => {
+    let li = document.createElement("li")
+    li.textContent = `${paragraph}.`
+    return li
+  }).forEach(paragraph => instructions.appendChild(paragraph))
+
+  instructions.removeChild(instructions.lastChild)
 }
 
 consumeAPI(url)
