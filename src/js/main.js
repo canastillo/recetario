@@ -36,9 +36,10 @@ const createCardCategoria = (receta) =>{
 
     card.style.minHeight = "450px"
 
-    let imagenReceta = document.createElement("img")
-    imagenReceta.style.maxWidth = "100%"
-    imagenReceta.src = receta["strMealThumb"]
+    let imgReceta = document.createElement("img")
+
+    imgReceta.style.maxWidth = "100%"
+    imgReceta.src = receta["strMealThumb"]
     let link = document.createElement("a")
     link.href = `recipe.html?i=${receta.idMeal}`
     link.classList.add("text-decoration-none")
@@ -61,10 +62,11 @@ const createCardCategoria = (receta) =>{
     buttonContainer.classList.add("button-container")
     buttonContainer.appendChild(button)
 
-    card.appendChild(imagenReceta)
+    card.appendChild(imgReceta)
     card.appendChild(nombrePlatillo)
     card.appendChild(buttonContainer)
     container.appendChild(card)
+
     let imagenReceta = document.createElement("img")
     imagenReceta.classList.add("mw-100")
     imagenReceta.src = receta["strMealThumb"]
