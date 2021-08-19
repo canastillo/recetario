@@ -46,38 +46,25 @@ fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
 
 const createCardIngrediente = (ingrediente) =>{
     let card = document.createElement("div")
+    let nombreIngrediente = ingrediente["strIngredient"]
+    
     card.classList.add("card");
 
-    let nombreIngrediente = document.createElement("h2");
-    nombreIngrediente.textContent = ingrediente["strIngredient"];
+    let link = document.createElement("a")
+    link.href = `ingredient.html?i=${nombreIngrediente}`
+    link.classList.add("text-decoration-none")
+    link.classList.add("text-reset")
 
+    let tituloIngrediente = document.createElement("h2");
+    tituloIngrediente.textContent = nombreIngrediente;
 
-    card.appendChild(nombreIngrediente);
+    let imagenIngrediente = document.createElement("img");
+    let urlImagen = `https://www.themealdb.com/images/ingredients/${nombreIngrediente}.png`
+    imagenIngrediente.src = urlImagen
+
+    link.appendChild(imagenIngrediente)
+    link.appendChild(tituloIngrediente)
+    card.appendChild(link)
 
     return card
 }
-
-
-
-/*
-const recipesResponseMeal = await fetch('www.themealdb.com/api/json/v1/1/random.php');
-const recipes = await recipesResponseMeal.json();
-
-const recipesResponseIngredients = await fetch('www.themealdb.com/api/json/v1/1/list.php?i=list');
-const recipes = await recipesResponseIngredients.json();
-
-
-const recipeList = document.querySelector('.RecetasAPI');
-
-const recipesHTML = '';
-for (let i=0; i < data.length; i+=1 ) {
-    const recipe = data[i];
-    recipesHTML += `<div class="recipe">
-<img class="recipe__image" src="${recipe.strMealThumb}" />
-<p class="recipe__title">${recipe.strMeal}</>
-</div>`;
-}
-
-recipeList.innerHTML = recipesHTML;
-
- */
