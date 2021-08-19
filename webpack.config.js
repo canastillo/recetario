@@ -59,6 +59,11 @@ module.exports = {
             template: './src/ingredient.html',
             chunks: ['main', 'ingredient', 'loadingbar']
         }),
+        new HtmlWebpackPlugin({
+            filename: 'randButton.html',
+            template: './src/randButton.html',
+            chunks: ['main']
+        })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist')
