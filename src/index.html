@@ -29,9 +29,6 @@
                     <a class="nav-link" href="./recipes.html">Recetas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./country.html">Por país</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="./ingredients.html">Ingredientes</a>
                 </li>
             </ul>
@@ -50,8 +47,11 @@
 
         <div class="buscar">
             <input type="text" required />
+
             <button type="submit">Buscar</button>
-            <button type="submit">Random</button>
+
+            <button onclick="location.href=randButton.html">Random</button>
+
         </div>
 
 
@@ -81,23 +81,13 @@
 
     <article class="RecetasFront">
         <h1>Algunas de nuestras recetas</h1>
-
-        <div class="buscar">
-            <button type="submit">Recetas destacadas</button>
-        </div>
-
     </article>
 
     <article class="RecetasAPI">
         <div class="container mw-md-50" id="recetas-container">
-
         </div>
     </article>
 
-    <article class="RecetasDown">
-        <div class="buscar">
-            <button type="submit">Ver mas</button>
-        </div>
 
     </article>
 
@@ -108,11 +98,6 @@
 <section class="Ingredientes">
     <article class="RecetasFront">
         <h1>Agunos de nuestros ingredientes principales</h1>
-
-        <div class="buscar">
-            <button type="submit">Ingredientes destacados</button>
-        </div>
-
     </article>
 
     <article class="ingredientesAPI">
@@ -122,20 +107,11 @@
 
     </article>
 
-    </article>
-
-    <article class="RecetasDown">
-        <div class="buscar">
-            <button type="submit">Ver mas</button>
-        </div>
-
-    </article>
-
 </section>
 
 
 
-<footer class="text-center text-white" style="background-color: #f1f1f1;">
+<footer class="text-center text-white" style="background-color: #f1f1f1;" id="footerbedu">
     <!-- Grid container -->
     <div class="container-fuid pt-3">
         <!-- Section: Social media -->
