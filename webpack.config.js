@@ -7,6 +7,7 @@ module.exports = {
         ingredient: { import: './src/js/ingredient.js', dependOn: 'loadingbar' },
         recipes: { import: './src/js/recipes.js', dependOn: 'loadingbar' },
         loadingbar: './src/js/loadingBar.js'
+
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
