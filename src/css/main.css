@@ -105,6 +105,10 @@ h1 {
     font-size: 15px;
 }
 
+.title-index {
+    padding-bottom: 50px;
+}
+
 .button-container {
     margin-left: auto;
     margin-right: auto;

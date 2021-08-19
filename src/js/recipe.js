@@ -28,7 +28,6 @@ function consumeAPI(url){
 }
 
 function addMeal(meal){
-
   textMeal.textContent = `${meal.strMeal}`;
   imgMeal.src = `${meal.strMealThumb}`;
 }
