@@ -32,7 +32,7 @@ de nuestro sitio Web.
 
 #### Pagina principal
 
-![alt text](/mockups/mobile/home.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Mobile/home.png)
 <br>
 En la pantalla home se muestran las listas de recetas e ingredientes,
 el usuario puede hacer scroll hacia la derecha para ver las
@@ -42,7 +42,7 @@ recetas e ingredientes que hay despues de los que ya se muestran
 
 #### Menu desplegado
 
-![alt text](/mockups/mobile/menu.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Mobile/menu.png)
 <br>
 En esta pantalla se muestra el menu que es desplegado al hacer clic en el
 boton de la esquina, se muestran las acciones principales que puede realizar el usuario
@@ -52,7 +52,7 @@ que son ir a home, recetas o ingredientes
 
 ### Catalago de Ingredientes
 
-![alt text](/mockups/mobile/ingredientes.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Mobile/ingredientes.png)
 <br>
 En esta pantalla se muestra la lista de ingredientes, el usuario puede hacer
 scroll hacia abajo para ver los elementos restantes
@@ -61,7 +61,7 @@ scroll hacia abajo para ver los elementos restantes
 
 ### Catalago de Recetas
 
-![alt text](/mockups/mobile/recetas.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Mobile/recetas.png)
 <br>
 En esta pantalla se muestra la lista de recetas, el usuario puede hacer
 scroll hacia abajo para ver los elementos restantes, ademas de que puede
@@ -72,7 +72,7 @@ los ingredientes y las instrucciones
 
 ### Vista de Ingrediente
 
-![alt text](/mockups/mobile/vistaIngrediente.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Mobile/vistaIngrediente.png)
 <br>
 Esta es la vista principal del ingrediente, aqui se muestran todos las recetas
 donde el ingrediente esta incluido
@@ -81,7 +81,7 @@ donde el ingrediente esta incluido
 
 ### Vista de Receta
 
-![alt text](/mockups/mobile/vistaReceta.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Mobile/vistaReceta.png)
 <br>
 Esta es la vista principal del la receta, aqui se muestran
 los de talles de la receta como lo son los ingredientes y
@@ -93,7 +93,7 @@ sus instrucciones para su preparacion
 
 ### Vista de Home
 
-![alt text](/mockups/desktop/home.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Desktop/home.png)
 <br>
 Esta es la vista principal de nuestra aplicación, se muestra
 la lista de ingredientes, lista de recetas, ademas de que se
@@ -103,7 +103,7 @@ cuenta con un buscador de recetas y un buscador random
 
 ### Vista de ingredientes
 
-![alt text](/mockups/desktop/ingredientes.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Desktop/ingredientes.png)
 <br>
 En esta vista se muestran todos los ingredientes
 <br>
@@ -111,7 +111,7 @@ En esta vista se muestran todos los ingredientes
 
 ### Vista de recetas
 
-![alt text](/mockups/desktop/recetas.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Desktop/recetas.png)
 <br>
 En esta vista se muestran todas las recetas ademas
 de que se puede dar click en el boton para ir a los
@@ -122,7 +122,7 @@ detalles de la receta
 
 ### Vista receta
 
-![alt text](/mockups/desktop/vistaReceta.png)
+![alt text](https://github.com/canastillo/recetario/blob/master/mockups/Desktop/vistaReceta.png)
 <br>
 En esta pantalla se muestran los detalles de la receta como lo son
 los ingredientes y las instrucciones
