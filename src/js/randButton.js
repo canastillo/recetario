@@ -7,6 +7,70 @@ const searchButton = document.getElementById('searchBtn');
 randomButton.addEventListener('click', searchRand);
 searchButton.addEventListener('click', search);
 
+//-----------------------CODIGO QUE SE ENCONTRABA PAGINA INDEX---------------
+
+let recetasContenedor = document.querySelector("#recetas-container");
+
+let ingredientesContenedor = document.querySelector("#ingredientes-container");
+
+///Recuperación de lista de recetas
+
+fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+    .then(response => response.json())
+    .then(data => {
+        data['meals'].forEach(receta => {
+            console.log(receta)
+            let card = createCardCategoria(receta);
+            recetasContenedor.appendChild(card);
+        })
+    })
+    .catch(error => console.log(error));
+
+const createCardCategoria = (receta) =>{
+    let card = document.createElement("div")
+    card.classList.add("card");
+
+    let imagenReceta = document.createElement("img")
+    imagenReceta.src = receta["strMealThumb"]
+
+    let nombrePlatillo = document.createElement("h2");
+    nombrePlatillo.textContent = receta["strMeal"];
+
+    card.appendChild(imagenReceta);
+    card.appendChild(nombrePlatillo);
+
+    return card
+}
+
+//Recuperación de lista de ingredientnes
+
+fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
+    .then(response => response.json())
+    .then(data => {
+        for(let i=0; i<4; i++){
+            let ingrediente = data['meals'][i];
+            let card = createCardIngrediente(ingrediente)
+            ingredientesContenedor.appendChild(card);
+        }
+    })
+    .catch(error => console.log(error));
+
+const createCardIngrediente = (ingrediente) =>{
+    let card = document.createElement("div")
+    card.classList.add("card");
+
+    let nombreIngrediente = document.createElement("h2");
+    nombreIngrediente.textContent = ingrediente["strIngredient"];
+
+
+    card.appendChild(nombreIngrediente);
+
+    return card
+}
+
+
+//-------------------------------------
+
 function searchRand() {
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         .then(function (response) {
