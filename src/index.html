@@ -46,9 +46,9 @@
             </h1>
 
             <div class="buscar">
-                <input type="text" required />
-                <button type="submit">Buscar</button>
-                <button id="random-button" type="submit">Random</button>
+                <input type="text" id="searchInput" required />
+                <button type="submit" id="searchBtn">Buscar</button>
+                <button id = "random-button" type="submit">Random</button>
             </div>
 
         </article>
@@ -70,6 +70,8 @@
 
     </section>
 
+    <div id="results" class="container" style="width: 90%;"></div>
+
     <!-- Lista de recetas -->
 
     <section class="Recetas">
@@ -77,9 +79,6 @@
         <article class="RecetasFront">
             <h1>Algunas de nuestras recetas</h1>
 
-            <div class="buscar">
-                <button class="pe-none" type="submit">Recetas destacadas</button>
-            </div>
 
         </article>
 
@@ -89,12 +88,6 @@
             </div>
         </article>
 
-        <article class="RecetasDown">
-            <div class="buscar">
-                <button id="btn-recipes" type="submit">Ver mas</button>
-            </div>
-
-        </article>
 
     </section>
 
@@ -104,9 +97,7 @@
         <article class="RecetasFront">
             <h1>Agunos de nuestros ingredientes principales</h1>
 
-            <div class="buscar">
-                <button class="pe-none" type="submit">Ingredientes destacados</button>
-            </div>
+
 
         </article>
 
@@ -117,14 +108,6 @@
 
         </article>
 
-        </article>
-
-        <article class="RecetasDown">
-            <div class="buscar">
-                <button id="btn-ingredients" type="submit">Ver mas</button>
-            </div>
-
-        </article>
 
     </section>
 
