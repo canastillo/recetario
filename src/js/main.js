@@ -68,3 +68,21 @@ const createCardIngrediente = (ingrediente) =>{
 
     return card
 }
+
+// Funcionamiento del botón random
+
+const randomButton = document.querySelector("#random-button")
+
+randomButton.addEventListener('click', () => {
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            let meal = data.meals[0] //obtiene primer elem de array
+            let id = meal["idMeal"]
+
+            location.href = `./recipe.html?i=${id}`
+
+        })
+})
